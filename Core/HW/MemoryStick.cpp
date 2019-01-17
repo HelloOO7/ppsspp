@@ -47,10 +47,7 @@ u64 MemoryStick_SectorSize() {
 }
 
 u64 MemoryStick_FreeSpace() {
-	u64 freeSpace = pspFileSystem.FreeSpace("ms0:/");
-	if (freeSpace < memStickSize)
-		return freeSpace;
-	return memStickSize;
+	return 1ULL * 1024 * 1024 * 1024; // 1GB
 }
 
 void MemoryStick_SetFatState(MemStickFatState state) {
